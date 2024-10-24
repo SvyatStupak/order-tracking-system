@@ -188,6 +188,7 @@ class OrderController extends Controller
                 'message' => 'Order not found'
             ], 404);
         }
+        $this->authorize('view', $order);
 
         return response()->json($order, 200);
     }
@@ -212,6 +213,8 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
+        $this->authorize('delete', $order);
+
         $order->delete();
 
         return response()->json(null, 204);
