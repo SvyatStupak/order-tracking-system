@@ -66,6 +66,7 @@ The project uses **Laravel Sanctum** for session-based authentication or token-b
 1. Add the following settings to your `.env` file:
    ```env
    SANCTUM_STATEFUL_DOMAINS=yourdomain.com
+   L5_SWAGGER_GENERATE_ALWAYS=true
    ```
 
 2. Use `security={{"sanctum":{}}}` in Swagger to document endpoints that use cookie-based authentication through Sanctum.
